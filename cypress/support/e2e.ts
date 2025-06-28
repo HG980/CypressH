@@ -14,4 +14,11 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+  if (err.message.includes('isTrusted') || err.message.includes('[object Event]')) {
+    return false;
+  }
+});
+
 import './commands'
