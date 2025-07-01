@@ -4,15 +4,21 @@ export class LoginPage {
         cy.visit('/#auth/login');
     }
 
-    enterUsername(username:string){
+   private enterUsername(username:string){
        cy.get('#userName').type(username); 
     }
 
-    enterPassword(password:string){
+    private enterPassword(password:string){
         cy.get('#pwInput').type(password);
     }
 
-    clickLogin(){
+    private clickLogin(){
         cy.get('[name="submitButton"]') .should('be.visible') .click();
+    }
+
+    login(username: string, password: string){
+        this.enterUsername(username);
+        this.enterPassword(password);
+        this.clickLogin();
     }
 }
