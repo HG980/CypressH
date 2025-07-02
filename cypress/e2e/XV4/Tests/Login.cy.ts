@@ -6,4 +6,5 @@ it('Login Page', () => {
     loginPage.visit();
     loginPage.login('harsha.gayathri@xyicon.com' ,'Aaaa1111');
 });
+
 });
