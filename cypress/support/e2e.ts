@@ -1,24 +1,22 @@
-// ***********************************************************
-// This example support/e2e.ts is processed and
-// loaded automatically before your test files.
-//
-// This is a great place to put global configuration and
-// behavior that modifies Cypress.
-//
-// You can change the location of this file or turn off
-// automatically serving support files with the
-// 'supportFile' configuration option.
-//
-// You can read more here:
-// https://on.cypress.io/configuration
-// ***********************************************************
+import './commands';
+//import { LoginPage } from 'cypress/e2e/XV4/Pages/LoginPage';
 
-// Import commands.js using ES2015 syntax:
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes('isTrusted') || err.message.includes('[object Event]')) {
-    return false;
+    return false; // prevent test from failing
   }
 });
 
-import './commands'
+
+// describe('Logging into the Xyicon App', () => {
+//   const loginPage = new LoginPage();
+
+//   beforeEach(() => {
+//     loginPage.visit();
+//   });
+
+//   it('Login Page', () => {
+//     loginPage.login('harsha.gayathri@xyicon.com', 'Aaaa1111');
+//   });
+// });
