@@ -1,4 +1,3 @@
-
 export class LoginPage {
     visit(){
         cy.visit('/#auth/login');

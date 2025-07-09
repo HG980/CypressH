@@ -1,10 +1,12 @@
 import { LoginPage } from "../Pages/LoginPage";
 
-describe('Loging to the Xyicon APP' , () => {
-    const loginPage = new LoginPage();
-it('Login Page', () => {
-    loginPage.visit();
-    loginPage.login('harsha.gayathri@xyicon.com' ,'Aaaa1111');
-});
+describe('Logging in to the Xyicon App', () => {
+  const loginPage = new LoginPage();
 
+  it('Login using credentials from fixture', () => {
+    cy.fixture('user_credentials').then((user) => {
+      loginPage.visit();
+      loginPage.login(user.username, user.password);
+    });
+  });
 });

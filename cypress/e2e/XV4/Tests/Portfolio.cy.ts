@@ -16,5 +16,4 @@ it('Create Portfolio and Add New Space', () => {
 
     createnewspace.createspace('Drawing 1' , 'Floor Plan' , 32 , 'Floor 1');
 });
-
 });
